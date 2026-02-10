@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Nafees - SQL Developer Resume</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2980b9;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --border-color: #ddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        
+        .resume-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        .icon {
+            font-size: 1.1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        h3 {
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .company {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .duration {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .project-duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary-color);
+            color: white;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            header, .section {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .skills-container, .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .nav-links {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        .experience-item, .project-card {
+            margin-bottom: 25px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="resume-container">
+        <header>
+            <div class="nav-links">
+                <a href="#summary">Summary</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+            </div>
+            
+            <h1>Mohd Nafees</h1>
+            <p class="title">SQL Developer & Database Engineer</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <a href="tel:+919997963487">+91 9997963487</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    <a href="mailto:nafeesraza21@gmail.com">nafeesraza21@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">
+                        <i class="fab fa-linkedin"></i>
+                    </span>
+                    <a href="https://linkedin.com/in/mohd-nafees-25b578b1" target="_blank">linkedin.com/in/mohd-nafees-25b578b1</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="section" id="summary">
+            <h2>Summary</h2>
+            <p>Results-driven SQL Developer with <span class="highlight">8.0 years</span> of experience specializing in <span class="highlight">SQL development, data analysis, and database administration</span> across multiple domains, including <span class="highlight">Finance, Sales, Purchase, Inventory, and Energy</span>. Proven ability to optimize database performance, automate data workflows, and enhance reporting accuracy. Expertise in <span class="highlight">T-SQL, Stored Procedures, Performance Tuning, Database Administration, and Crystal Reports</span>. Adept at translating complex business requirements into efficient database solutions that drive operational efficiency and business insights.</p>
+        </section>
+
+        <section class="section" id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Databases & SQL</h4>
+                    <ul>
+                        <li>MSSQL, T-SQL, Postgres</li>
+                        <li>Stored Procedures, Functions, Triggers</li>
+                        <li>Performance Tuning, Views, Joins</li>
+                        <li>Indexing, Exception Handling</li>
+                        <li>Database Administration</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Data Integration & Tools</h4>
+                    <ul>
+                        <li>AWS S3 Bucket, AWS RDS</li>
+                        <li>Azure SQL, Dremio</li>
+                        <li>LucidChart</li>
+                        <li>Data Transfer Workbench (DTW)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>ERP Systems & Reporting</h4>
+                    <ul>
+                        <li>SAP B1, SAP B1 HANA</li>
+                        <li>Crystal Reports</li>
+                        <li>Database Backup, Restore, Maintenance</li>
+                        <li>Query Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Database Engineer</h3>
+                <p class="company">Protean Egov Technologies., Delhi</p>
+                <p class="duration">May 2025 – Present</p>
+                <ul>
+                    <li>Designed and developed relational database systems based on <span class="highlight">Functional Requirement Specifications (FRS)</span> and <span class="highlight">Software Requirement Specifications (SRS)</span> across multiple domains.</li>
+                    <li>Installed, configured, and maintained <span class="highlight">SQL Server, PostgreSQL, and MySQL</span> environments across development and production servers.</li>
+                    <li>Developed and optimized complex <span class="highlight">T-SQL / PL/SQL scripts, stored procedures, functions, views, and triggers</span> based on dynamic business logic.</li>
+                    <li>Performed database import/export, backup, and disaster recovery planning.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Database Engineer</h3>
+                <p class="company">CG Infinity Pvt. Ltd., Noida</p>
+                <p class="duration">Oct 2022 – May 2025</p>
+                <ul>
+                    <li>Optimized data processing workflows, improving <span class="highlight">efficiency by 30%</span> through optimized stored procedures integrated with <span class="highlight">Airflow</span>.</li>
+                    <li>Reduced db query execution time by <span class="highlight">40%</span> by restructuring complex queries and index strategies.</li>
+                    <li>Developed and managed databases according to <span class="highlight">ERD diagrams</span>, ensuring data integrity and <span class="highlight">100% compliance</span> with business rules.</li>
+                    <li>Automated data extraction and reporting, cutting manual effort by <span class="highlight">50%</span>.</li>
+                    <li>Engaged with stakeholders to refine business logic, leading to <span class="highlight">15% faster decision-making</span>.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>SQL Developer</h3>
+                <p class="company">Cogniscient Business Solutions Pvt. Ltd.</p>
+                <p class="duration">March 2017 – Oct 2022</p>
+                <ul>
+                    <li>Developed and deployed <span class="highlight">GST patches</span> for Inventory, Sales, and Purchase modules, ensuring <span class="highlight">100% compliance</span> with taxation policies.</li>
+                    <li>Optimized database queries, reducing <span class="highlight">data retrieval time by 35%</span>.</li>
+                    <li>Designed and maintained <span class="highlight">data migration</span> processes, facilitating seamless ERP system upgrades.</li>
+                    <li>Created and scheduled <span class="highlight">SQL Agent Jobs</span>, improving data maintenance efficiency by <span class="highlight">25%</span>.</li>
+                    <li>Generated <span class="highlight">custom Crystal Reports</span>, enhancing data visualization and business insights.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>CKYCRR 2.0 (Cersai)</h3>
+                    <p class="project-duration">May 2025 – Present</p>
+                    <ul>
+                        <li>Supported data migration efforts between legacy systems and the new database structure, ensuring accuracy and completeness.</li>
+                        <li>Documented database architecture, <span class="highlight">data flow diagrams, entity-relationship models (ERDs)</span>, and change management logs.</li>
+                        <li>Created and maintained efficient <span class="highlight">T-SQL stored procedures and user-defined functions</span> to implement and streamline business logic.</li>
+                        <li>Engaged in regular <span class="highlight">client interactions</span>, including requirement gathering sessions, technical discussions, and status meetings.</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Shell Energy (MP2)</h3>
+                    <p class="project-duration">Oct 2022 – Aug 2024</p>
+                    <ul>
+                        <li>Spearheaded the development of SQL-based solutions, <span class="highlight">doubling data processing speed</span> for energy trading operations.</li>
+                        <li>Developed SQL procedures that <span class="highlight">improved data transformation accuracy by 100%</span> for downstream applications.</li>
+                        <li>Engaged with clients daily to refine reporting structures, leading to <span class="highlight">30% faster insights</span>.</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Sony India Pvt. Ltd</h3>
+                    <p class="project-duration">Aug 2019 – Oct 2022</p>
+                    <ul>
+                        <li>Led the development of optimized SQL procedures, <span class="highlight">reducing issue resolution time by 20%</span>.</li>
+                        <li>Enhanced <span class="highlight">data accuracy and consistency</span> across multiple business units through refined database design.</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Ayurvet Limited</h3>
+                    <p class="project-duration">Feb 2018 – Aug 2019</p>
+                    <ul>
+                        <li>Developed SQL Server solutions, leading to a <span class="highlight">30% increase in data-driven decision-making</span>.</li>
+                        <li>Wrote stored procedures and Crystal Reports that streamlined business reporting processes, <span class="highlight">reducing reporting time by 40%</span>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="certifications">
+            <h2>Awards & Certifications</h2>
+            <ul>
+                <li><span class="highlight">Earned five Snowflake badges</span> in Data Warehousing, Data Lake, Data Applications, Collaboration, Marketplace & Cost Estimation, and Data Engineering</li>
+                <li><span class="highlight">SnowPro Core Certified</span></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mohd Nafees. All rights reserved.</p>
+        <p>Email: <a href="mailto:nafeesraza21@gmail.com" style="color: #3498db;">nafeesraza21@gmail.com</a> | Phone: <a href="tel:+919997963487" style="color: #3498db;">+91 9997963487</a></p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to current section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(window.scrollY >= (sectionTop - 100)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
