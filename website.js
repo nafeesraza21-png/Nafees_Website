@@ -26,7 +26,14 @@ const server = http.createServer((req, res)=>{
      const data =   fs.readFileSync('resume.html')
     res.end(data.toString()); 
     }
+else if(req.url == '/download'){
+    const data = fs.readFileSync('Nafees_Resume.pdf');
 
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', 'attachment; filename="Nafees_Resume.pdf"');
+
+    res.end(data);
+}
 
 else
 {
